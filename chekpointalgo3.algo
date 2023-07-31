@@ -1,0 +1,28 @@
+ALGORITHM SORT-ARR
+VAR
+arr: array_OF INTEGER[100];
+key :integer
+
+BEGIN
+FOR (int i:=0,i<arr.length,i++) DO    
+    aux:=arr[i]
+    j:=i-1
+    WHILE (j>=0, aux<arr[j]) then
+        arr[j+1]:= arr[j]
+        j:=j-1
+
+    END_WHILE
+    arr[j+1]=aux    
+END_FOR
+i:=0
+j:=i+1
+FOR (int i:=0,i<arr.length-1,i++) DO    
+    IF (arr[i]<key=<arr[j]) THEN
+        n:=arr.length
+        WHILE (n>j) DO
+            arr[n]:=arr[n-1]
+            n:=n-1
+        END_WHILE
+        arr[j]:=key
+    END_IF
+
